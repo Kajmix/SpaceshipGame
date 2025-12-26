@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmojncrccpx41"]
+
+[ext_resource type="Texture2D" uid="uid://cxqju5vxocbkl" path="res://assets/spaceship.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://ccrp0478a47ly" path="res://scripts/player_movement.gd" id="1_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://cgoob7wpujnl0" path="res://scenes/spaceship_particle.tscn" id="2_g2els"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 7.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 5
+script = ExtResource("1_qhqgy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3vyb7")
+
+[node name="left_particle" parent="Sprite2D" instance=ExtResource("2_g2els")]
+position = Vector2(-3.5, 8)
+
+[node name="right_particle" parent="Sprite2D" instance=ExtResource("2_g2els")]
+position = Vector2(3.5, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2els")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_enemy_area2d_entered"]

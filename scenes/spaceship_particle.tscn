@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgoob7wpujnl0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8gmcf"]
+specular_color = Color(0.7533679, 9.6839074e-05, 0.6257027, 1)
+
+[sub_resource type="Gradient" id="Gradient_8gmcf"]
+colors = PackedColorArray(0.5011121, 1.3717264e-05, 0.3690942, 1, 1, 0.5302257, 0.8591799, 1)
+
+[node name="spaceship_particle" type="CPUParticles2D"]
+modulate = Color(0.70865774, 0.0001262951, 0.6166813, 1)
+z_index = -1
+amount = 14
+texture = SubResource("CanvasTexture_8gmcf")
+lifetime = 0.18000000000000002
+randomness = 1.0
+lifetime_randomness = 0.08
+emission_shape = 1
+emission_sphere_radius = 2.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -74.23
+angular_velocity_max = 237.53
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_8gmcf")

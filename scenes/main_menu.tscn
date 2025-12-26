@@ -1,0 +1,143 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjp1u1j2bj0oj"]
+
+[ext_resource type="Script" uid="uid://bhunvv5olewdh" path="res://scenes/MainMenu_control.gd" id="1_bqqt6"]
+[ext_resource type="FontFile" uid="uid://c7xo3yl08hw6r" path="res://fonts/04B_03__.TTF" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://cxqju5vxocbkl" path="res://assets/spaceship.png" id="2_ekxnf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
+line_spacing = 0.0
+font = ExtResource("1_l6cm7")
+font_size = 8
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -161.0
+offset_right = -50.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4.499852, 8.008561)
+script = ExtResource("1_bqqt6")
+
+[node name="Background" type="ColorRect" parent="Camera2D/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.19136462, 0.03306751, 0.22143695, 1)
+
+[node name="Title" type="Label" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.444328
+offset_top = -17.627539
+offset_right = 25.555672
+offset_bottom = -1.6275387
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+text = "SPACESHIP
+Game :3"
+label_settings = SubResource("LabelSettings_ekxnf")
+
+[node name="Play" type="Button" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 3.7779021
+offset_top = 28.344667
+offset_right = 79.19147
+offset_bottom = 44.344666
+scale = Vector2(0.43023437, 0.2610728)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 8
+text = "Play"
+
+[node name="Exit" type="Button" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 3.7779026
+offset_top = 33.46419
+offset_right = 79.19147
+offset_bottom = 49.46419
+scale = Vector2(0.43023437, 0.2610728)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 8
+text = "Exit"
+
+[node name="TextureRect4" type="TextureRect" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.1106873
+offset_top = 2.850546
+offset_right = -1.5868759
+offset_bottom = 6.471672
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ekxnf")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.223282
+offset_top = -9.636091
+offset_right = 17.747093
+offset_bottom = -6.014965
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ekxnf")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.888721
+offset_top = -4.017104
+offset_right = -7.2696724
+offset_bottom = 0.9775505
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ekxnf")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.88957596
+offset_top = -5.265768
+offset_right = 16.889576
+offset_bottom = 5.223007
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ekxnf")
+expand_mode = 1
+
+[connection signal="button_down" from="Camera2D/Control/Play" to="Camera2D/Control" method="_on_play_button_down"]
+[connection signal="button_down" from="Camera2D/Control/Exit" to="Camera2D/Control" method="_on_exit_button_down"]
